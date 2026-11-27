@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeuDelivery - Crie seu Próprio App sem Comissões Abusivas</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans antialiased bg-slate-900 text-slate-100 selection:bg-brand-500 selection:text-white">
+
+  <!-- NAVEGAÇÃO / HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center space-x-2">
+        <div class="w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center font-black text-slate-900 text-xl shadow-lg shadow-brand-500/20">
+          🚀
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white">Meu<span class="text-brand-500">Delivery</span></span>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+        <a href="#segmentos" class="hover:text-brand-500 transition-colors">Segmentos</a>
+        <a href="#dores" class="hover:text-brand-500 transition-colors">A Dor</a>
+        <a href="#solucao" class="hover:text-brand-500 transition-colors">Benefícios</a>
+        <a href="#funcionalidades" class="hover:text-brand-500 transition-colors">Recursos</a>
+        <a href="#depoimentos" class="hover:text-brand-500 transition-colors">Depoimentos</a>
+        <a href="#planos" class="hover:text-brand-500 transition-colors">Planos</a>
+        <a href="#faq" class="hover:text-brand-500 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- CTA Nav -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="https://wa.me/5521974852754?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20MeuDelivery." target="_blank" class="bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold px-5 py-2.5 rounded-xl transition-all shadow-lg shadow-brand-500/25 hover:scale-[1.02]">
+          Fale com o Atendente
+        </a>
+      </div>
+
+      <!-- Botão Menu Mobile -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white focus:outline-none p-2">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Dropdown Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+      <a href="#segmentos" class="block text-slate-300 hover:text-brand-500 py-2">Segmentos</a>
+      <a href="#dores" class="block text-slate-300 hover:text-brand-500 py-2">A Dor</a>
+      <a href="#solucao" class="block text-slate-300 hover:text-brand-500 py-2">Benefícios</a>
+      <a href="#funcionalidades" class="block text-slate-300 hover:text-brand-500 py-2">Recursos</a>
+      <a href="#depoimentos" class="block text-slate-300 hover:text-brand-500 py-2">Depoimentos</a>
+      <a href="#planos" class="block text-slate-300 hover:text-brand-500 py-2">Planos</a>
+      <a href="#faq" class="block text-slate-300 hover:text-brand-500 py-2">FAQ</a>
+      <a href="https://wa.me/5521974852754?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20MeuDelivery." target="_blank" class="block w-full text-center bg-brand-500 text-slate-950 font-bold py-3 rounded-xl">
+       Fale com o Atendente
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-3xl mx-auto space-y-6">
+        <div class="inline-flex items-center space-x-2 bg-slate-800/80 border border-slate-700/80 px-4 py-1.5 rounded-full text-xs font-semibold text-brand-500 backdrop-blur-md">
+          <span>🔥 Chega de perder margem para os concorrentes</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white">
+          Pare de pagar até 30% de comissão por cada pedido. <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-emerald-400">Tenha o seu próprio site.</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-normal leading-relaxed">
+          Crie seu site próprio em minutos, venda direto pelo WhatsApp e fique com 100% do seu lucro. Sem intermediários, sem taxas por venda.
+        </p>
+
+        <div class="py-2">
+          <p class="text-brand-400 font-semibold text-base sm:text-lg flex items-center justify-center gap-2">
+            Receba no conforto de sua casa ou retire diretamente na loja • Serve para todo tipo de estabelecimento!
+          </p>
+        </div>
+
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/5521974852754?text=Ol%C3%A1!%20Quero%20contratar%20o%20MeuDelivery." target="_blank" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-slate-950 text-lg font-bold px-8 py-4 rounded-xl transition-all shadow-xl shadow-brand-500/20 hover:scale-[1.02] text-center">
+            Fale com o Atendente
+          </a>
+        </div>
+        <p class="text-xs text-slate-500 font-medium">
+          Configuração rápida e prática • Suporte especializado • Sem comissão sobre vendas
+        </p>
+      </div>
+
+      <!-- CARROSSEL DE SEGMENTOS (SMARTPHONE + PAINEL) -->
+      <div id="segmentos" class="mt-14 md:mt-20 relative max-w-5xl mx-auto">
+        
+        <!-- Botões de Seleção Rápida de Segmento -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+          <button onclick="mudarSlide(0)" class="tab-loja active px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-emerald-500 text-slate-950 shadow-lg" data-index="0">
+            🥬 Hortifruti
+          </button>
+          <button onclick="mudarSlide(1)" class="tab-loja px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-index="1">
+            🐶 Petshop
+          </button>
+          <button onclick="mudarSlide(2)" class="tab-loja px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-index="2">
+            🍻 Bebidas
+          </button>
+          <button onclick="mudarSlide(3)" class="tab-loja px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-index="3">
+            🥩 Açougue
+          </button>
+          <button onclick="mudarSlide(4)" class="tab-loja px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700" data-index="4">
+            🍕 Pizzaria
+          </button>
+        </div>
+
+        <!-- Container Principal do Mockup -->
+        <div class="relative bg-slate-800/50 p-4 sm:p-8 rounded-3xl border border-slate-700/60 shadow-2xl backdrop-blur-sm">
+          
+          <!-- Setas de Navegação Lateral -->
+          <button onclick="slideAnterior()" aria-label="Anterior" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-900/90 border border-slate-700 text-white hover:bg-brand-500 hover:text-slate-950 flex items-center justify-center transition-all shadow-lg">
+            ❮
+          </button>
+          <button onclick="proximoSlide()" aria-label="Próximo" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-900/90 border border-slate-700 text-white hover:bg-brand-500 hover:text-slate-950 flex items-center justify-center transition-all shadow-lg">
+            ❯
+          </button>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- COLUNA ESQUERDA: SMARTPHONE REALISTA COM A TELA DA LOJA -->
+            <div class="lg:col-span-5 flex justify-center">
+              <!-- Moldura do Celular -->
+              <div class="w-[290px] sm:w-[310px] bg-slate-950 rounded-[2.8rem] p-3 border-[6px] border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.6)] relative">
+                <!-- Notch / Câmera do Celular -->
+                <div class="w-28 h-5 bg-slate-900 rounded-b-2xl mx-auto mb-1 flex items-center justify-center">
+                  <div class="w-10 h-1 bg-slate-700 rounded-full"></div>
+                </div>
+
+                <!-- Tela Interna do App (Conteúdo Dinâmico via JS) -->
+                <div id="telaCelular" class="bg-slate-50 text-slate-900 rounded-[2rem] overflow-hidden h-[500px] flex flex-col justify-between transition-all duration-300">
+                  <!-- Preenchido dinamicamente pelo script -->
+                </div>
+              </div>
+            </div>
+
+            <!-- COLUNA DIREITA: DESCRIÇÃO DO SEGMENTO + PAINEL EM TEMPO REAL -->
+            <div class="lg:col-span-7 space-y-6 px-2 sm:px-6">
+              <div id="infoSegmento" class="space-y-3">
+                <!-- Preenchido dinamicamente pelo script -->
+              </div>
+
+              <!-- Card de Gestão em Tempo Real -->
+              <div class="bg-slate-900 border border-slate-700/80 rounded-2xl p-5 space-y-4">
+                <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+                  <span class="text-xs font-bold text-slate-300">Painel de Gestão do Lojista</span>
+                  <span class="inline-flex items-center text-[11px] bg-brand-500/10 text-brand-500 px-2.5 py-0.5 rounded-full font-bold">● Sistema Ativo</span>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div class="bg-slate-800/60 p-3.5 rounded-xl border border-slate-700/50">
+                    <div class="text-[11px] text-slate-400">Faturamento Direto</div>
+                    <div id="faturamentoExemplo" class="text-xl sm:text-2xl font-black text-brand-500">R$ 1.890,00</div>
+                  </div>
+                  <div class="bg-slate-800/60 p-3.5 rounded-xl border border-slate-700/50">
+                    <div class="text-[11px] text-slate-400">Comissão Paga a Apps</div>
+                    <div class="text-xl sm:text-2xl font-black text-white">R$ 0,00</div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between text-xs text-slate-400 pt-1">
+                  <span>✓ Cores e logotipo 100% da sua marca</span>
+                  <span class="text-brand-400 font-semibold">Entrega ou Retirada</span>
+                </div>
+              </div>
+
+              <!-- Indicadores (Bolinhas) -->
+              <div class="flex items-center justify-center lg:justify-start space-x-2 pt-2">
+                <button onclick="mudarSlide(0)" class="dot-loja w-6 h-2 rounded-full bg-brand-500 transition-all"></button>
+                <button onclick="mudarSlide(1)" class="dot-loja w-2 h-2 rounded-full bg-slate-600 transition-all"></button>
+                <button onclick="mudarSlide(2)" class="dot-loja w-2 h-2 rounded-full bg-slate-600 transition-all"></button>
+                <button onclick="mudarSlide(3)" class="dot-loja w-2 h-2 rounded-full bg-slate-600 transition-all"></button>
+                <button onclick="mudarSlide(4)" class="dot-loja w-2 h-2 rounded-full bg-slate-600 transition-all"></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A DOR DO CLIENTE -->
+  <section id="dores" class="py-20 bg-slate-950/50 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Seu estabelecimento trabalha duro, mas quem fica com o lucro é o marketplace?
+        </h2>
+        <p class="text-slate-400">
+          Entenda os maiores gargalos de depender exclusivamente de aplicativos terceirizados.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4 hover:border-red-500/40 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl font-bold">💸</div>
+          <h3 class="text-xl font-bold text-white">Comissões Abusivas</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Pagar de 12% a 30% sobre cada venda liquida sua margem de lucro no fim do mês, fazendo você trabalhar duro apenas para pagar taxas.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4 hover:border-red-500/40 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl font-bold">🔒</div>
+          <h3 class="text-xl font-bold text-white">Seus clientes não são seus</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Nas grandes plataformas, você não tem acesso ao telefone ou e-mail do seu cliente para fazer pós-venda ou oferecer promoções exclusivas.
+          </p>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 p-8 rounded-2xl space-y-4 hover:border-red-500/40 transition-colors">
+          <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center text-2xl font-bold">⚔️</div>
+          <h3 class="text-xl font-bold text-white">Concorrência Desleal</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            O cliente busca a sua loja e recebe recomendações de concorrentes patrocinados logo abaixo na mesma tela do aplicativo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A SOLUÇÃO / BENEFÍCIOS -->
+  <section id="solucao" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Retome o controle do seu negócio com sua própria plataforma de delivery
+        </h2>
+        <p class="text-slate-400">
+          A liberdade que você precisa para crescer com previsibilidade e lucro real.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl space-y-4 hover:border-brand-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-2xl font-bold">💰</div>
+          <h3 class="text-xl font-bold text-white">0% de comissão por pedido</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            O faturamento é 100% seu. Pague apenas uma mensalidade fixa que cabe no seu bolso, sem surpresas na fatura no fim do mês.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl space-y-4 hover:border-brand-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-2xl font-bold">📱</div>
+          <h3 class="text-xl font-bold text-white">Vendas diretas no WhatsApp</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            O pedido chega formatado, detalhado e pronto para a separação direto no seu WhatsApp ou no painel de gestão centralizado.
+          </p>
+        </div>
+
+        <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl space-y-4 hover:border-brand-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center text-2xl font-bold">👥</div>
+          <h3 class="text-xl font-bold text-white">Base própria de clientes</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Tenha acesso completo ao histórico, contatos e hábitos de compra dos seus clientes para estratégias de fidelização.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNCIONALIDADES CHAVE -->
+  <section id="funcionalidades" class="py-20 bg-slate-950/50 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Tudo o que você precisa para operar com eficiência
+        </h2>
+        <p class="text-slate-400">
+          Ferramentas pensadas exclusivamente para a rotina ágil de um delivery.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">📋</div>
+          <h4 class="font-bold text-white text-lg">Catálogo Digital</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Personalize cores, fotos, adicionais, cortes, pesos e opções de combo em tempo real.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">🖥️</div>
+          <h4 class="font-bold text-white text-lg">Painel de Pedidos</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Acompanhe a esteira de produção (Pendente ➔ Em Preparo ➔ Saiu para Entrega) em uma tela intuitiva.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">📊</div>
+          <h4 class="font-bold text-white text-lg">Painel Financeiro</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Saiba exatamente quais são seus produtos mais vendidos, faturamento diário e ticket médio.
+          </p>
+        </div>
+
+        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800 space-y-3">
+          <div class="w-10 h-10 rounded-lg bg-brand-500/10 text-brand-500 flex items-center justify-center text-xl font-bold">🖨️</div>
+          <h4 class="font-bold text-white text-lg">Impressão Automática</h4>
+          <p class="text-slate-400 text-xs leading-relaxed">
+            Imprima comanda de produção e etiqueta de entrega automaticamente ao aceitar o pedido.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL / DEPOIMENTOS -->
+  <section id="depoimentos" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-b from-slate-800 to-slate-900 p-8 sm:p-12 rounded-3xl border border-slate-700/80 text-center relative shadow-2xl">
+        <div class="text-4xl mb-6">⭐⭐⭐⭐⭐</div>
+        <blockquote class="text-lg sm:text-xl text-slate-200 font-medium leading-relaxed italic">
+          "Eu deixava mais de R$ 4.000,00 por mês em taxas de plataformas. Com o app próprio, migrei meus clientes fiéis e recuperei minha margem de lucro logo no primeiro mês. O sistema é tão simples que minha equipe aprendeu em 10 minutos."
+        </blockquote>
+        <div class="mt-8 pt-6 border-t border-slate-800">
+          <div class="font-bold text-white text-lg">Ricardo Mendes</div>
+          <div class="text-sm text-brand-500 font-medium">Proprietário da Pizzaria & Hamburgueria Artesanal</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREÇOS E PLANOS -->
+  <section id="planos" class="py-20 bg-slate-950/50 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Plano Simples e Transparente
+        </h2>
+        <p class="text-slate-400">
+          Sem comissões abusivas. Tudo o que você precisa para ter total autonomia no seu negócio.
+        </p>
+      </div>
+
+      <div class="max-w-lg mx-auto">
+        <!-- Plano Profissional -->
+        <div class="bg-slate-900 border-2 border-brand-500 rounded-3xl p-8 flex flex-col justify-between space-y-6 relative shadow-2xl shadow-brand-500/10">
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-500 text-slate-950 text-xs font-black uppercase px-4 py-1 rounded-full">
+            Completo
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold text-white text-center">Plano Profissional</h3>
+            <p class="text-xs text-slate-400 text-center">Para estabelecimentos que buscam escala, autonomia e eliminação de taxas.</p>
+            
+            <div class="text-center py-4 bg-slate-800/60 rounded-2xl border border-slate-700/50">
+              <div class="text-sm font-semibold text-slate-300">Adesão & Configuração</div>
+              <div class="text-3xl font-extrabold text-brand-500">R$ 150,00 <span class="text-xs text-slate-400 font-normal">(taxa única)</span></div>
+              <div class="text-xs text-slate-400 mt-2 border-t border-slate-700/40 pt-2">
+                Após o 1º mês: <strong class="text-white">R$ 109,90 /mês</strong>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-300 pt-2 border-t border-slate-800">
+              <li class="flex items-center space-x-2">
+                <span class="text-brand-500 font-bold">✓</span>
+                <span>Configuração completa do seu cardápio/catálogo</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-brand-500 font-bold">✓</span>
+                <span>Impressão automática e gestor de pedidos</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-brand-500 font-bold">✓</span>
+                <span>Múltiplos atendentes simultâneos</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-brand-500 font-bold">✓</span>
+                <span>Pedidos ilimitados direto no WhatsApp</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <span class="text-brand-500 font-bold">✓</span>
+                <span>Suporte prioritário via WhatsApp</span>
+              </li>
+            </ul>
+          </div>
+          <a href="https://wa.me/5521974852754?text=Ol%C3%A1!%20Quero%20contratar%20o%20Plano%20Profissional." target="_blank" class="w-full text-center bg-brand-500 hover:bg-brand-600 text-slate-950 font-bold py-3.5 rounded-xl transition-all shadow-lg shadow-brand-500/25">
+            Quero Contratar Agora
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (PERGUNTAS FREQUENTES) -->
+  <section id="faq" class="py-20 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+          Perguntas Frequentes
+        </h2>
+        <p class="text-slate-400">
+          Tire todas as suas dúvidas antes de começar.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+            <span>Preciso entender de tecnologia para configurar?</span>
+            <span class="text-brand-500 text-xl font-bold transition-transform">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-400 text-sm leading-relaxed border-t border-slate-800/50 pt-3">
+            Não. Nós ajudamos no processo de configuração inicial (inclusa na taxa de R$ 150) para deixar seu catálogo pronto para receber pedidos de forma rápida e prática.
+          </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+            <span>O sistema cobra algum percentual sobre minhas vendas?</span>
+            <span class="text-brand-500 text-xl font-bold transition-transform">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-400 text-sm leading-relaxed border-t border-slate-800/50 pt-3">
+            Zero. Você paga apenas o valor fixo da sua mensalidade após o primeiro mês (R$ 109,90), independentemente de faturar R$ 1.000 ou R$ 100.000 no mês. Todo o lucro adicional é 100% seu.
+          </div>
+        </div>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden">
+          <button class="faq-btn w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center focus:outline-none">
+            <span>Como funciona o suporte se eu tiver dúvidas no meio do expediente?</span>
+            <span class="text-brand-500 text-xl font-bold transition-transform">+</span>
+          </button>
+          <div class="faq-content hidden px-6 pb-5 text-slate-400 text-sm leading-relaxed border-t border-slate-800/50 pt-3">
+            Nosso suporte atende via WhatsApp em tempo real durante o horário comercial e nos horários de pico do delivery para garantir que sua operação nunca pare.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ E CTA FINAL -->
+  <footer class="py-20 bg-slate-950 border-t border-slate-800 relative overflow-hidden">
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8 relative">
+      <h2 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
+        Pare de rasgar dinheiro com taxas hoje mesmo.
+      </h2>
+      <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+        Junte-se a centenas de estabelecimentos que assumiram o controle das suas vendas e dobraram sua margem de lucro.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://wa.me/5521974852754?text=Ol%C3%A1!%20Quero%20criar%20meu%20site." target="_blank" class="w-full sm:w-auto bg-brand-500 hover:bg-brand-600 text-slate-950 text-lg font-bold px-10 py-4 rounded-xl transition-all shadow-xl shadow-brand-500/25 hover:scale-[1.02]">
+          Criar Meu Site Agora
+        </a>
+      </div>
+      <p class="text-xs text-slate-500">
+        Adesão e configuração por R$ 150,00 • Mensalidade de R$ 109,90 a partir do 2º mês
+      </p>
+
+      <div class="pt-16 border-t border-slate-800/80 text-xs text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>© 2026 MeuDelivery. Todos os direitos reservados.</div>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-slate-400">Termos de Uso</a>
+          <a href="#" class="hover:text-slate-400">Política de Privacidade</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT PARA COMPORTAMENTOS E CARROSSEL DE SEGMENTOS -->
+  <script>
+    // 1. Toggle Menu Mobile
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // 2. FAQ Accordion
+    const faqBtns = document.querySelectorAll('.faq-btn');
+    faqBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('span:last-child');
+        
+        content.classList.toggle('hidden');
+        icon.textContent = content.classList.contains('hidden') ? '+' : '−';
+      });
+    });
+
+    // 3. Dados dos Segmentos para o Carrossel no Celular
+    const lojasExemplo = [
+      {
+        nome: "Hortifruti Verde Vida",
+        subtitulo: "Frutas, Verduras e Legumes Fresquinhos",
+        emoji: "🥬",
+        corHeader: "#16a34a", // Verde
+        corBadge: "bg-emerald-500 text-slate-950",
+        tituloMarketing: "Hortifruti & Sacolão Delivery",
+        descMarketing: "Seus clientes montam a feira da semana pelo celular escolhendo frutas, legumes e kits orgânicos com entrega rápida no bairro.",
+        faturamento: "R$ 1.890,00",
+        categorias: ["Todas", "Frutas", "Verduras", "Kits"],
+        produtos: [
+          { nome: "Banana Prata (Kg)", desc: "Selecionada e madura", preco: "R$ 6,90", qtd: 2, img: "🍌" },
+          { nome: "Tomate Italiano (Kg)", desc: "Fresco colhido hoje", preco: "R$ 8,50", qtd: 1, img: "🍅" },
+          { nome: "Kit Salada Completa", desc: "Alface, tomate, cenoura", preco: "R$ 14,90", qtd: 0, img: "🥗" }
+        ],
+        totalCarrinho: "R$ 22,30 (3 itens)"
+      },
+      {
+        nome: "Amigo Fiel Petshop",
+        subtitulo: "Rações, Petiscos e Acessórios",
+        emoji: "🐶",
+        corHeader: "#2563eb", // Azul Royal
+        corBadge: "bg-blue-500 text-white",
+        tituloMarketing: "Petshop & Casa de Ração",
+        descMarketing: "Venda sacos de ração, antipulgas, brinquedos e agende banho & tosa diretamente pelo WhatsApp sem pagar taxas.",
+        faturamento: "R$ 3.120,00",
+        categorias: ["Todas", "Rações", "Petiscos", "Higiene"],
+        produtos: [
+          { nome: "Ração Golden Cães 15kg", desc: "Sabor Frango e Arroz", preco: "R$ 159,90", qtd: 1, img: "🐕" },
+          { nome: "Tapete Higiênico 30un", desc: "Alta absorção", preco: "R$ 64,90", qtd: 0, img: "🐾" },
+          { nome: "Bifinho Carne 65g", desc: "Petisco natural", preco: "R$ 7,50", qtd: 2, img: "🦴" }
+        ],
+        totalCarrinho: "R$ 174,90 (3 itens)"
+      },
+      {
+        nome: "Adega & Bebidas Geladas",
+        subtitulo: "Cervejas, Destilados, Gelo e Carvão",
+        emoji: "🍻",
+        corHeader: "#d97706", // Âmbar / Dourado
+        corBadge: "bg-amber-500 text-slate-950",
+        tituloMarketing: "Distribuidora de Bebidas",
+        descMarketing: "Ideal para pedidos noturnos e finais de semana. Venda fardos, combos de destilados, gelo e carvão com entrega expressa.",
+        faturamento: "R$ 4.350,00",
+        categorias: ["Todas", "Cervejas", "Combos", "Gelo"],
+        produtos: [
+          { nome: "Heineken Long Neck (6un)", desc: "Super gelada", preco: "R$ 38,90", qtd: 2, img: "🍺" },
+          { nome: "Combo Whisky + 4 RedBull", desc: "Acompanha gelo de coco", preco: "R$ 149,00", qtd: 0, img: "🥃" },
+          { nome: "Saco de Gelo 5kg", desc: "Gelo filtrado em cubo", preco: "R$ 12,00", qtd: 1, img: "🧊" }
+        ],
+        totalCarrinho: "R$ 89,80 (3 itens)"
+      },
+      {
+        nome: "Casa de Carnes Premium",
+        subtitulo: "Cortes Nobres e Kit Churrasco",
+        emoji: "🥩",
+        corHeader: "#b91c1c", // Vermelho Vinho
+        corBadge: "bg-red-600 text-white",
+        tituloMarketing: "Açougue & Boutique de Carnes",
+        descMarketing: "Receba encomendas para o churrasco do fim de semana com escolha de espessura do corte, tempero e retirada agendada.",
+        faturamento: "R$ 3.780,00",
+        categorias: ["Todas", "Bovinos", "Churrasco", "Aves"],
+        produtos: [
+          { nome: "Picanha Argentina (Kg)", desc: "Peça embalada a vácuo", preco: "R$ 79,90", qtd: 1, img: "🥩" },
+          { nome: "Linguiça Toscana (Kg)", desc: "Artesanal pernil suíno", preco: "R$ 24,90", qtd: 1, img: "🌭" },
+          { nome: "Pão de Alho Tradicional", desc: "Bandeja com 5 unidades", preco: "R$ 13,50", qtd: 0, img: "🥖" }
+        ],
+        totalCarrinho: "R$ 104,80 (2 itens)"
+      },
+      {
+        nome: "Pizzaria Forno a Lenha",
+        subtitulo: "Pizzas Artesanais, Bordas e Bebidas",
+        emoji: "🍕",
+        corHeader: "#e63946", // Vermelho Clássico
+        corBadge: "bg-rose-500 text-white",
+        tituloMarketing: "Pizzarias, Hamburguerias e Lanches",
+        descMarketing: "Monte pizzas meio a meio, bordas recheadas e adicionais de hambúrguer com envio automático para a cozinha.",
+        faturamento: "R$ 2.950,00",
+        categorias: ["Todas", "Pizzas", "Bordas", "Bebidas"],
+        produtos: [
+          { nome: "Pizza Calabresa GG", desc: "8 fatias + cebola roxa", preco: "R$ 54,90", qtd: 1, img: "🍕" },
+          { nome: "Pizza 4 Queijos GG", desc: "Mussarela, provolone, gorgonzola", preco: "R$ 59,90", qtd: 0, img: "🧀" },
+          { nome: "Coca-Cola 2 Litros", desc: "Bem gelada", preco: "R$ 14,00", qtd: 1, img: "🥤" }
+        ],
+        totalCarrinho: "R$ 68,90 (2 itens)"
+      }
+    ];
+
+    let slideAtual = 0;
+    let timerCarrossel = null;
+
+    function renderizarSlide(index) {
+      const loja = lojasExemplo[index];
+      const telaCelular = document.getElementById('telaCelular');
+      const infoSegmento = document.getElementById('infoSegmento');
+      const faturamentoEl = document.getElementById('faturamentoExemplo');
+
+      // Renderiza o interior do Smartphone
+      telaCelular.innerHTML = `
+        <div>
+          <!-- Cabeçalho da Loja (Cor Dinâmica) -->
+          <div style="background-color: ${loja.corHeader};" class="p-4 text-white text-center transition-colors duration-300">
+            <div class="w-12 h-12 rounded-full bg-white/20 mx-auto flex items-center justify-center text-2xl mb-1 border-2 border-white">
+              ${loja.emoji}
+            </div>
+            <h4 class="font-bold text-sm leading-tight">${loja.nome}</h4>
+            <p class="text-[10px] opacity-90">${loja.subtitulo}</p>
+            <span class="inline-block mt-1.5 bg-emerald-400 text-slate-950 text-[9px] font-extrabold px-2 py-0.5 rounded-full">
+              🟢 Aberto agora
+            </span>
+          </div>
+
+          <!-- Categorias Horizontais -->
+          <div class="flex gap-1.5 px-3 py-2.5 overflow-hidden border-b border-slate-200 bg-white">
+            ${loja.categorias.map((cat, i) => `
+              <span style="${i === 0 ? `background-color: ${loja.corHeader}; color: #fff; border-color: ${loja.corHeader};` : ''}" 
+                    class="text-[10px] px-2.5 py-1 rounded-full font-semibold border border-slate-200 text-slate-600 whitespace-nowrap">
+                ${cat}
+              </span>
+            `).join('')}
+          </div>
+
+          <!-- Lista de Produtos -->
+          <div class="p-2.5 space-y-2">
+            ${loja.produtos.map(prod => `
+              <div class="bg-white p-2 rounded-xl border border-slate-200/80 shadow-sm flex items-center justify-between gap-2">
+                <div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-xl shrink-0">
+                  ${prod.img}
+                </div>
+                <div class="flex-1 min-w-0 text-left">
+                  <div class="text-[11px] font-bold text-slate-800 truncate">${prod.nome}</div>
+                  <div class="text-[9px] text-slate-500 truncate">${prod.desc}</div>
+                  <div class="text-[11px] font-extrabold text-slate-900 mt-0.5">${prod.preco}</div>
+                </div>
+                <div class="flex items-center gap-1 shrink-0">
+                  ${prod.qtd > 0 ? `<span class="text-[10px] font-bold text-slate-700 px-1">${prod.qtd}x</span>` : ''}
+                  <span style="background-color: ${loja.corHeader};" class="w-6 h-6 rounded-md text-white font-bold text-xs flex items-center justify-center">
+                    +
+                  </span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- Barra Inferior do Carrinho -->
+        <div style="background-color: ${loja.corHeader};" class="p-3 text-white flex justify-between items-center text-[11px] font-bold">
+          <span>🛒 Ver Carrinho</span>
+          <span>${loja.totalCarrinho}</span>
+        </div>
+      `;
+
+      // Renderiza o texto explicativo ao lado do celular
+      infoSegmento.innerHTML = `
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-extrabold ${loja.corBadge}">
+          ${loja.emoji} Exemplo da Loja
+        </span>
+        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+          ${loja.tituloMarketing}
+        </h3>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          ${loja.descMarketing}
+        </p>
+      `;
+
+      if (faturamentoEl) {
+        faturamentoEl.textContent = loja.faturamento;
+      }
+
+      // Atualiza os botões de aba (pills) no topo
+      document.querySelectorAll('.tab-loja').forEach((btn, i) => {
+        if (i === index) {
+          btn.className = 'tab-loja active px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-brand-500 text-slate-950 shadow-lg scale-105';
+        } else {
+          btn.className = 'tab-loja px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all bg-slate-800 text-slate-300 hover:bg-slate-700';
+        }
+      });
+
+      // Atualiza as bolinhas indicadoras
+      document.querySelectorAll('.dot-loja').forEach((dot, i) => {
+        if (i === index) {
+          dot.className = 'dot-loja w-6 h-2 rounded-full bg-brand-500 transition-all';
+        } else {
+          dot.className = 'dot-loja w-2 h-2 rounded-full bg-slate-600 transition-all';
+        }
+      });
+    }
+
+    function mudarSlide(index) {
+      slideAtual = index;
+      renderizarSlide(slideAtual);
+      reiniciarTimer();
+    }
+
+    function proximoSlide() {
+      slideAtual = (slideAtual + 1) % lojasExemplo.length;
+      renderizarSlide(slideAtual);
+      reiniciarTimer();
+    }
+
+    function slideAnterior() {
+      slideAtual = (slideAtual - 1 + lojasExemplo.length) % lojasExemplo.length;
+      renderizarSlide(slideAtual);
+      reiniciarTimer();
+    }
+
+    function reiniciarTimer() {
+      if (timerCarrossel) clearInterval(timerCarrossel);
+      timerCarrossel = setInterval(() => {
+        slideAtual = (slideAtual + 1) % lojasExemplo.length;
+        renderizarSlide(slideAtual);
+      }, 4500);
+    }
+
+    // Inicia o carrossel ao carregar a página
+    window.addEventListener('DOMContentLoaded', () => {
+      renderizarSlide(0);
+      reiniciarTimer();
+    });
+  </script>
+</body>
+</html>
